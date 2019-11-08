@@ -4,7 +4,6 @@ import Browser
 import Html exposing (button, div, h2, input, strong, text)
 import Html.Attributes as Attributes
 import Html.Events exposing (onClick, onInput)
-import Maybe.Extra
 
 
 main =
@@ -40,6 +39,7 @@ type Msg
 update : Msg -> Model -> Model
 update msg model =
     let
+        userInputNum : Float
         userInputNum =
             Maybe.withDefault 0 (String.toFloat model.content)
     in
@@ -87,7 +87,7 @@ update msg model =
 view : Model -> Html.Html Msg
 view model =
     div []
-        [ h2 [] [ text (String.fromFloat model.counter) ]
+        [ h2 [] [ text <| String.fromFloat model.counter ]
         , div [] [ input [ onInput ChangeNumber ] [] ]
         , button [ onClick Plus ] [ text "+" ]
         , button [ onClick Minus ] [ text "-" ]
