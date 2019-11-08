@@ -4,6 +4,7 @@ import Browser
 import Html exposing (button, div, h2, input, strong, text)
 import Html.Attributes as Attributes
 import Html.Events exposing (onClick, onInput)
+import Maybe.Extra
 
 
 main =
