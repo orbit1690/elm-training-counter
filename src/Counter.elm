@@ -1,4 +1,4 @@
-module Main exposing (update)
+module Counter exposing (update)
 
 import Browser
 import Html
