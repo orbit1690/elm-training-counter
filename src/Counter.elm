@@ -50,9 +50,14 @@ update msg model =
 view : Model -> Html.Html Msg
 view model =
     Html.div []
-        [ Html.button [ onClick Minus ] [ Html.text "-" ]
-        , Html.button [ onClick Plus ] [ Html.text "+" ]
-        , Html.button [ onClick Mul ] [ Html.text "*" ]
-        , Html.button [ onClick Divide ] [ Html.text "/" ]
+        [ createButton Minus "-"
+        , createButton Plus "+"
+        , createButton Mul "*"
+        , createButton Divide "/"
         , Html.text <| String.fromFloat model
         ]
+
+
+createButton : Msg -> String -> Html.Html Msg
+createButton msg operation =
+    Html.button [ onClick msg ] [ Html.text operation ]
